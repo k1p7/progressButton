@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorBtnInactive">#BAC3C6</color>
+    <color name="colorBtnHalfProgress">#98D2A7</color>
+    <color name="colorBtnActive">#4BC26A</color>
+</resources>
