@@ -66,7 +66,7 @@ class ProgressButton : AppCompatButton {
     }
 
     fun startProgress() {
-        val offset = (width - height) / 2
+//        val offset = (width - height) / 2
 //        val left = offset + 0
 //        val right = width - offset - 0
 //        val bottom = height - 0
@@ -77,7 +77,6 @@ class ProgressButton : AppCompatButton {
         val right = center + height /2
         val bottom = height - 0
         val top = 0
-
 
         if (animatedProgressDrawable == null) {
             animatedProgressDrawable = ProgressDrawable(colorProgress, context.dip(3))
@@ -103,6 +102,18 @@ class ProgressButton : AppCompatButton {
         layoutParams.width = realWidth
         background = layerDrawable
         requestLayout()
+    }
+
+    //todo взять из progressbar
+    fun startNewProgress() {
+        val indeterminateDrawable = ContextCompat.getDrawable(context, R.drawable.progress_medium_material)
+        if (indeterminateDrawable != null) {
+            if (needsTileify(indeterminateDrawable)) {
+                setIndeterminateDrawableTiled(indeterminateDrawable)
+            } else {
+                setIndeterminateDrawable(indeterminateDrawable)
+            }
+        }
     }
 
     fun setConnect(list: List<EditText>) {
